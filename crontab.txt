@@ -1,0 +1,10 @@
+SHELL=/bin/bash
+MAILTO=""
+@reboot sleep 30 && /usr/local/bin/checkip
+
+*/10 * * * * /usr/local/bin/checkip > /dev/null
+
+
+# NOTES:
+# Don't forget to restart cron after adding or changing entries.
+# To restart, type the following command: service cron reload OR /etc/init.d/cron reload
